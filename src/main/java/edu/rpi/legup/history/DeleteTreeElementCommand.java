@@ -21,7 +21,7 @@ public class DeleteTreeElementCommand extends PuzzleCommand {
     }
 
     /**
-     * Executes a command
+     * Executes an command
      */
     @Override
     public void executeCommand() {
@@ -75,7 +75,7 @@ public class DeleteTreeElementCommand extends PuzzleCommand {
     }
 
     /**
-     * Undoes a command
+     * Undoes an command
      */
     @Override
     public void undoCommand() {

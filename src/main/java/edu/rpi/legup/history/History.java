@@ -18,7 +18,7 @@ public class History {
     /**
      * History Constructor this holds information about changes to the board
      * and Tree structure for undoing and redoing operations. Though history is
-     * a List, it is implemented like a stack. The curIndex points to the
+     * an List, it is implemented like a stack. The curIndex points to the
      * top of the stack (where the last change was made).
      */
     public History() {

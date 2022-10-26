@@ -138,7 +138,7 @@ public class EditDataCommand extends PuzzleCommand {
     }
 
     /**
-     * Undoes a command
+     * Undoes an command
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -173,6 +173,5 @@ public class EditDataCommand extends PuzzleCommand {
         final TreeElement finalTreeElement = selection.getFirstSelection().getTreeElement();
         puzzle.notifyBoardListeners(listener -> listener.onTreeElementChanged(finalTreeElement));
         puzzle.notifyTreeListeners(listener -> listener.onTreeSelectionChanged(selection));
-
     }
 }

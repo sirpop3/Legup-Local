@@ -2,7 +2,7 @@ package edu.rpi.legup.history;
 
 public interface ICommand {
     /**
-     * Executes a command
+     * Executes an command
      */
     void execute();
 
@@ -20,12 +20,12 @@ public interface ICommand {
     String getError();
 
     /**
-     * Undoes a command
+     * Undoes an command
      */
     void undo();
 
     /**
-     * Redoes a command
+     * Redoes an command
      */
     void redo();
 }

@@ -30,7 +30,7 @@ public class MasyuLine extends PuzzleElement<Entry<MasyuCell, MasyuCell>> {
     }
 
     /**
-     * Copies this element puzzleElement to a new PuzzleElement object
+     * Copies this elements puzzleElement to a new PuzzleElement object
      *
      * @return copied PuzzleElement object
      */

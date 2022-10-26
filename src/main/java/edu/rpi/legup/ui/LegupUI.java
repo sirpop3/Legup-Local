@@ -42,7 +42,7 @@ public class LegupUI extends JFrame implements WindowListener {
     }
 
     /**
-     * LegupUI Constructor - creates a new LegupUI to setup the menu and toolbar
+     * LegupUI Constructor - creates a new LegupUI to set up the menu and toolbar
      */
     public LegupUI() {
         setTitle("LEGUP");

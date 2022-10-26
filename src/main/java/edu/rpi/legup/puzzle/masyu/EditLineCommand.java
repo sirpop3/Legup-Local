@@ -133,7 +133,7 @@ public class EditLineCommand extends PuzzleCommand {
     }
 
     /**
-     * Undoes an command
+     * Undoes a command
      */
     @Override
     public void undoCommand() {

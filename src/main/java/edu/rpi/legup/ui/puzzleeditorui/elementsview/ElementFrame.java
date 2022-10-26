@@ -34,8 +34,8 @@ public class ElementFrame extends JPanel {
         tabbedPane.addTab(placeableElementPanel.getName(), placeableElementPanel.getIcon(), new JScrollPane(placeableElementPanel), placeableElementPanel.getToolTip());
 
         setLayout(new BorderLayout());
-        setMinimumSize(new Dimension(250, 256));
-        setPreferredSize(new Dimension(330, 256));
+        setMinimumSize(new Dimension(360, 256));
+        setPreferredSize(new Dimension(360, 256));
 
         add(tabbedPane);
         add(status, BorderLayout.SOUTH);

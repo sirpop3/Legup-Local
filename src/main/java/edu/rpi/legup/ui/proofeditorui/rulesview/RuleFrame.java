@@ -67,8 +67,8 @@ public class RuleFrame extends JPanel {
         tabbedPane.addTab(contradictionPanel.name, contradictionPanel.icon, newp, contradictionPanel.toolTip);
 
         setLayout(new BorderLayout());
-        setMinimumSize(new Dimension(250, 256));
-        setPreferredSize(new Dimension(330, 256));
+        setMinimumSize(new Dimension(385, 256));
+        setPreferredSize(new Dimension(385, 256));
 
         add(tabbedPane);
         add(status, BorderLayout.SOUTH);
@@ -118,7 +118,7 @@ public class RuleFrame extends JPanel {
     /**
      * Set the status label to a value. Use resetStatus to clear it.
      *
-     * @param check true iff we want a check box, if false we'll have a red x box
+     * @param check true iff we want a checkbox, if false we'll have a red x box
      * @param text  the text we're setting the label to display
      */
     public void setStatus(boolean check, String text) {

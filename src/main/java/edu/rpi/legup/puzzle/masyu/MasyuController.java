@@ -47,28 +47,32 @@ public class MasyuController extends ElementController {
         if (mousePressedCell != null && elementView != null) {
             if (mouseDraggedCell == null) {
                 mouseDraggedCell = elementView;
-                Point p1 = mousePressedCell.getPuzzleElement().getLocation();
-                Point p2 = mouseDraggedCell.getPuzzleElement().getLocation();
-
-                if (Math.abs(p1.x - p2.x) == 1 ^ Math.abs(p1.y - p2.y) == 1) {
-                    masyuLine.add(elementView);
-                    MasyuLine newLine = new MasyuLine(mousePressedCell.getPuzzleElement(), mouseDraggedCell.getPuzzleElement());
-                    puzzle.notifyBoardListeners(listener -> listener.onBoardDataChanged(newLine));
-                }
+                createLine(elementView, puzzle, mousePressedCell, mouseDraggedCell);
             }
             else {
                 if (mouseDraggedCell != elementView) {
-                    Point p1 = mouseDraggedCell.getPuzzleElement().getLocation();
-                    Point p2 = elementView.getPuzzleElement().getLocation();
-
-                    if (Math.abs(p1.x - p2.x) == 1 ^ Math.abs(p1.y - p2.y) == 1) {
-                        masyuLine.add(elementView);
-                        MasyuLine newLine = new MasyuLine(mouseDraggedCell.getPuzzleElement(), elementView.getPuzzleElement());
-                        puzzle.notifyBoardListeners(listener -> listener.onBoardDataChanged(newLine));
-                    }
+                    createLine(elementView, puzzle, mouseDraggedCell, elementView);
                     mouseDraggedCell = elementView;
                 }
             }
+        }
+    }
+    /**
+     * creates Masyu Line at puzzle position
+     *
+     * @param elementView Board View
+     * @param puzzle current Board
+     * @param mousePressedCell current edit cell
+     * @param mouseDraggedCell current drag cell
+     */
+    private void createLine(MasyuElementView elementView, Puzzle puzzle, MasyuElementView mousePressedCell, MasyuElementView mouseDraggedCell) {
+        Point p1 = mousePressedCell.getPuzzleElement().getLocation();
+        Point p2 = mouseDraggedCell.getPuzzleElement().getLocation();
+
+        if (Math.abs(p1.x - p2.x) == 1 ^ Math.abs(p1.y - p2.y) == 1) {
+            masyuLine.add(elementView);
+            MasyuLine newLine = new MasyuLine(mousePressedCell.getPuzzleElement(), mouseDraggedCell.getPuzzleElement());
+            puzzle.notifyBoardListeners(listener -> listener.onBoardDataChanged(newLine));
         }
     }
 

@@ -66,15 +66,12 @@ public class EditDataCommand extends PuzzleCommand {
             }
 
             board = transition.getBoard();
-
-            puzzleElement = board.getPuzzleElement(selectedPuzzleElement);
-            savePuzzleElement = puzzleElement.copy();
         }
         else {
             transition = (TreeTransition) treeElement;
-            puzzleElement = board.getPuzzleElement(selectedPuzzleElement);
-            savePuzzleElement = puzzleElement.copy();
         }
+        puzzleElement = board.getPuzzleElement(selectedPuzzleElement);
+        savePuzzleElement = puzzleElement.copy();
 
         Board prevBoard = transition.getParents().get(0).getBoard();
 
@@ -138,7 +135,7 @@ public class EditDataCommand extends PuzzleCommand {
     }
 
     /**
-     * Undoes an command
+     * Undoes a command
      */
     @SuppressWarnings("unchecked")
     @Override

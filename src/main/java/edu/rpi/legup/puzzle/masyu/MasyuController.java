@@ -49,11 +49,10 @@ public class MasyuController extends ElementController {
                 mouseDraggedCell = elementView;
                 createLine(elementView, puzzle, mousePressedCell, mouseDraggedCell);
             }
-            else {
-                if (mouseDraggedCell != elementView) {
-                    createLine(elementView, puzzle, mouseDraggedCell, elementView);
-                    mouseDraggedCell = elementView;
-                }
+            else if (mouseDraggedCell != elementView) {
+                createLine(elementView, puzzle, mouseDraggedCell, elementView);
+                mouseDraggedCell = elementView;
+
             }
         }
     }
@@ -91,6 +90,7 @@ public class MasyuController extends ElementController {
      */
     @Override
     public void changeCell(MouseEvent e, PuzzleElement data) {
+        System.out.println("Masyu changeCell");
         MasyuCell cell = (MasyuCell) data;
         if(cell.getData() == 1 || cell.getData() == 2) {
             return;

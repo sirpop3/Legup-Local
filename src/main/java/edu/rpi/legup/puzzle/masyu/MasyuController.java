@@ -39,6 +39,7 @@ public class MasyuController extends ElementController {
         masyuLine.add(mousePressedCell);
     }
 
+
     @Override
     public void mouseDragged(MouseEvent e) {
         BoardView boardView = getInstance().getLegupUI().getBoardView();
@@ -56,6 +57,7 @@ public class MasyuController extends ElementController {
             }
         }
     }
+
     /**
      * creates Masyu Line at puzzle position
      *
@@ -92,14 +94,20 @@ public class MasyuController extends ElementController {
     public void changeCell(MouseEvent e, PuzzleElement data) {
         System.out.println("Masyu changeCell");
         MasyuCell cell = (MasyuCell) data;
-        if(cell.getData() == 1 || cell.getData() == 2) {
-            return;
-        }
         if(cell.getData() == 0) {
             data.setData(3);
         }
-        else {
+        else if (cell.getData() == 3){
             data.setData(0);
+        }
+        else if (cell.getData() == 2) {
+            data.setData(4);
+        }
+        else if (cell.getData() == 4) {
+            data.setData(2);
+        }
+        else {
+
         }
     }
 }

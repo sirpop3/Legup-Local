@@ -20,6 +20,8 @@ public class MasyuCell extends GridCell<Integer> {
                 return MasyuType.WHITE;
             case 3:
                 return MasyuType.LINE;
+            case 4:
+                return MasyuType.WHITE_LINE;
             default:
                 return null;
         }

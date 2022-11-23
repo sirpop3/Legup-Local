@@ -18,7 +18,7 @@ public abstract class PuzzleCommand implements ICommand {
     }
 
     /**
-     * Executes an command
+     * Executes a command
      */
     @Override
     public final void execute() {

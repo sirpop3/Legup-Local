@@ -33,10 +33,12 @@ public class MasyuController extends ElementController {
      */
     @Override
     public void mousePressed(MouseEvent e) {
+        System.out.println("Masyu MousePress Logged.");
         BoardView boardView = getInstance().getLegupUI().getBoardView();
         this.masyuLine.clear();
         mousePressedCell = (MasyuElementView) boardView.getElement(e.getPoint());
         masyuLine.add(mousePressedCell);
+
     }
 
 
@@ -48,10 +50,10 @@ public class MasyuController extends ElementController {
         if (mousePressedCell != null && elementView != null) {
             if (mouseDraggedCell == null) {
                 mouseDraggedCell = elementView;
-                createLine(elementView, puzzle, mousePressedCell, mouseDraggedCell);
+                //createLine(elementView, puzzle, mousePressedCell, mouseDraggedCell); Line Visual
             }
             else if (mouseDraggedCell != elementView) {
-                createLine(elementView, puzzle, mouseDraggedCell, elementView);
+                //createLine(elementView, puzzle, mouseDraggedCell, elementView); Line Visual
                 mouseDraggedCell = elementView;
 
             }
@@ -106,8 +108,11 @@ public class MasyuController extends ElementController {
         else if (cell.getData() == 4) {
             data.setData(2);
         }
-        else {
-
+        else if (cell.getData() == 1) {
+            data.setData(5);
+        }
+        else if (cell.getData() == 5) {
+            data.setData(1);
         }
     }
 }

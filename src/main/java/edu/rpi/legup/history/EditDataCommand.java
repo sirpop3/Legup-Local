@@ -75,7 +75,7 @@ public class EditDataCommand extends PuzzleCommand {
 
         Board prevBoard = transition.getParents().get(0).getBoard();
 
-        boardView.getElementController().changeCell(event, puzzleElement);
+        boardView.getElementController().changeCell(event, puzzleElement); // actual cell editor
 
         if (prevBoard.getPuzzleElement(selectedPuzzleElement).equalsData(puzzleElement)) {
             board.removeModifiedData(puzzleElement);

@@ -67,8 +67,7 @@ public class MasyuImporter extends PuzzleImporter {
             for (int i = 0; i < elementDataList.getLength(); i++) {
                 MasyuCell cell = (MasyuCell) puzzle.getFactory().importCell(elementDataList.item(i), masyuBoard);
                 Point loc = cell.getLocation();
-                if (cell.getData() == 1) {
-                    cell.setModifiable(false);
+                if (cell.getData() == 1 || cell.getData() == 2) {
                     cell.setGiven(true);
                 }
                 masyuBoard.setCell(loc.x, loc.y, cell);
